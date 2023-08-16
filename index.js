@@ -1,15 +1,23 @@
+
+/* --fs--  Es un modulo del sistema de archivos node.js, proporciona una interfaz para interactuar con el sistema de archivos del sistema operativo  */
 const fs = require('fs')
-/* 
-const textIn = fs.readFileSync('./txt/start.txt','utf8')
+
+
+/* 1. esta parte del codigo nos enseña a leers files tipo text y poder agregarlos en una cadena de string*/
+
+/* --readFileSync--  es un metodo de fs, se utiliza para leer archivos, y Sync bloquea la ejecucion del codigo hasta que la lectura del archivo se complete */
+
+const textIn = fs.readFileSync('./text/input.txt', 'utf-8')
 console.log(textIn);
 
-const textOut = `Jonas anda en ${textIn}\nCreated in ${Date()} , ` 
-console.log(textOut);
- */
-/* const hello = 'hello world';
-console.log(hello); */
+/* --Date.now-- devuelve milisegundos desde 1970, y el solo Date devuelve la fecha actual */
 
-//Non-block
+
+const textOut = `Jonas en su momento mas humilde escribiento ${textIn}.\nCreated on ${Date()}`
+
+fs.writeFileSync('./text/input.txt',textOut)
+
+console.log('File written!');
 
 
 fs.readFile('./txt/start.txt', 'utf8', (err, data1) => {
