@@ -2,6 +2,8 @@
 /* --fs--  Es un modulo del sistema de archivos node.js, proporciona una interfaz para interactuar con el sistema de archivos del sistema operativo  */
 const fs = require('fs')
 const http = require('http')
+const { json } = require('stream/consumers')
+const url = require('url')
 ///////////////////////////////
 //HTTP
 
@@ -40,8 +42,29 @@ console.log(textIn); */
 //////////////////////////////////////////////////
 //SERVER
 
+
+
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf8',)
+const dataObj = JSON.parse(data);
+
 const server = http.createServer((req,res)=>{
-    res.end('Hello from the server')
+    const pathName = req.url
+
+    if(pathName === '/' || pathName === '/overview'){
+        res.end('This is the overview')
+    } else if (pathName === '/product'){
+        res.end('This is the PRODUCT')
+    } else if(pathName === '/api'){
+        res.writeHead(200, {'Content-type':'application/json'})
+        res.end(data);
+    }else{
+        res.writeHead(404,{
+            'Content-type':'text/html',
+            'my-own-header' : 'hello-world'
+        })
+        res.end('<h1>Page not foudd</h1>')
+    }
+    
 })
 
 server.listen(8000, '127.0.0.1', () =>{
