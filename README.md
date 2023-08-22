@@ -54,7 +54,7 @@ fs.readFile('./txt/start.txt', 'utf8', (err, data1) => {
 SERVER
 ------
  función llamada replaceTemplate que toma dos argumentos: temp y product. Parece que esta función se encarga de reemplazar ciertas etiquetas dentro de un "template" con los valores correspondientes del objeto product.
- 
+
 ```javascript
 const replaceTemplate = (temp,product) =>{
     let output = temp.replace(/{%PRODUCTNAME%}/g,product.productName)
@@ -96,3 +96,9 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8',)
 const dataObj = JSON.parse(data);
 
 ```
+
+
+
+
+
+
