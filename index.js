@@ -2,8 +2,9 @@
 /* --fs--  Es un modulo del sistema de archivos node.js, proporciona una interfaz para interactuar con el sistema de archivos del sistema operativo  */
 const fs = require('fs')
 const http = require('http')
-const { json } = require('stream/consumers')
 const url = require('url')
+
+const replaceTemplate = require('./modules/replaceTemplate')
 ///////////////////////////////
 //HTTP
 
@@ -41,18 +42,7 @@ console.log(textIn); */
 
 //////////////////////////////////////////////////
 //SERVER
-const replaceTemplate = (temp,product) =>{
-    let output = temp.replace(/{%PRODUCTNAME%}/g,product.productName)
-    output = output.replace(/{%IMAGE%}/g,product.image)
-    output = output.replace(/{%PRICE%}/g,product.price)
-    output = output.replace(/{%FROM%}/g,product.from)
-    output = output.replace(/{%NUTRIENTES%}/g,product.nutrients)
-    output = output.replace(/{%QUANTITY%}/g,product.quantity)
-    output = output.replace(/{%DESCRIPTION%}/g,product.description)
-    output = output.replace(/{%ID%}/g,product.id)
 
-    if(!product.organic)output = output.replace(/{%IMAGE%}/g,product.image)
-}
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8',)
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8',)
@@ -63,24 +53,29 @@ const dataObj = JSON.parse(data);
 
 
 const server = http.createServer((req,res)=>{
-
-
-    const pathName = req.url
+    const { query,pathname} = url.parse(req.url, true) ;
 
     //Overview page
-    if(pathName === '/' || pathName === '/overview'){
-        res.writeHead(200, { 'Content-type':'text/html'})
+    // Dentro del bloque para la página de resumen (overview)
+if (pathname === '/' || pathname === '/overview') {
+    res.writeHead(200, { 'Content-type': 'text/html' })
 
-        const cardsHtml = dataObj.map(el =>replaceTemplate(tempCard , el))
+    const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
+    const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml)
 
-        res.end(tempOverview)
-
-    //Product page    
-    } else if (pathName === '/product'){
-        res.end('This is the PRODUCT')
+/*     console.log(cardsHtml);
+/*  */     /* const overviewPage = tempOverview.replace(/{%PRODUCT_CARDS%}/g, cardsHtml);  */
+ 
+    res.end(output);
+}
+ else if (pathname === '/product'){
+    res.writeHead(200, { 'Content-type': 'text/html' })
+    const product = dataObj[query.id]
+    const output = replaceTemplate(tempProduct, product)
+    res.end(output)
 
     //API    
-    } else if(pathName === '/api'){
+    } else if(pathname === '/api'){
         res.writeHead(200, {' Content-type':'application/json'})
         res.end(data);
 
