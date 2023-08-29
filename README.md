@@ -1,3 +1,24 @@
+# QUE ES NODEJS?
+
+Es un entorno de ejecucion de codigo abierto la cual permite escribir codigo javascript al lado del servidor,
+excelente para contruir aplicaciones web y servicios al lado del cliente.
+
+Caracteristicas de NodeJs
+-
+
+-V8 Engine: Se basa en el motor de google V8, es un motor de javascript de alto rendimiento utilizado en los navegadores de google Chrome, V8 compila  y ejecuta el codigo de manera eficiente
+
+Event Loop: Node.js utiliza un modelo de programación asíncrona y basada en eventos. Esto significa que las operaciones no bloqueantes como la lectura/escritura de archivos o las solicitudes de red se gestionan de manera eficiente sin detener la ejecución del programa.
+
+Módulos y NPM: Node.js utiliza el sistema de módulos CommonJS, lo que permite la organización del código en módulos reutilizables. Node Package Manager (NPM) es una herramienta que se utiliza para instalar, administrar y compartir paquetes de código JavaScript de terceros. NPM es fundamental en el ecosistema de Node.js.
+
+APIs del Sistema Operativo: Node.js proporciona APIs para interactuar con el sistema operativo, lo que permite realizar tareas como lectura/escritura de archivos, manipulación de rutas, gestión de procesos, etc.
+
+Amplia Comunidad: Node.js tiene una comunidad activa y numerosos paquetes y bibliotecas disponibles en NPM que facilitan el desarrollo de una variedad de aplicaciones.
+
+Aplicaciones en Tiempo Real: Node.js es muy adecuado para aplicaciones en tiempo real como chat en línea, juegos multijugador y aplicaciones de colaboración en tiempo real, debido a su capacidad para manejar muchas conexiones simultáneas en una sola máquina.
+
+
 
 # AṔRENDIDO POR EL MOMENTO DEL CURSO DE NODE.JS
 
