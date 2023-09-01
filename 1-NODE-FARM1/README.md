@@ -19,6 +19,37 @@ Amplia Comunidad: Node.js tiene una comunidad activa y numerosos paquetes y bibl
 Aplicaciones en Tiempo Real: Node.js es muy adecuado para aplicaciones en tiempo real como chat en línea, juegos multijugador y aplicaciones de colaboración en tiempo real, debido a su capacidad para manejar muchas conexiones simultáneas en una sola máquina.
 
 
+# TIPOS DE MODULOS EN NODEJS
+
+Modulos Core
+--
+
+-Son modulos integrados en nodejs y estan disponibles de forma prederteminada
+
+```javascript
+require(http)
+require(fs)
+```
+
+Modulos Nativos
+--
+
+-Son modulos creados por nosotros la cual utilizamos al desarrolo
+
+```javascript
+require('./lib/controller')
+```
+
+Mdoulos de NPM
+--
+
+-Son modulos terceros de npm la cual instal amos
+
+```javascript
+require('express')
+require('mongoose')
+```
+
 
 # AṔRENDIDO POR EL MOMENTO DEL CURSO DE NODE.JS
 
