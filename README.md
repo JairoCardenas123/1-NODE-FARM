@@ -6,17 +6,48 @@ excelente para contruir aplicaciones web y servicios al lado del cliente.
 Caracteristicas de NodeJs
 -
 
--V8 Engine: Se basa en el motor de google V8, es un motor de javascript de alto rendimiento utilizado en los navegadores de google Chrome, V8 compila  y ejecuta el codigo de manera eficiente
+-Libuv:
+-------
+Es una biblioteca multiplataforma la cual utiliza node para gestionar entradas y salidas de manera asincronica,
+asi como la programacion de hilos y administracion de subprocesos de Hilos
 
-Event Loop: Node.js utiliza un modelo de programación asíncrona y basada en eventos. Esto significa que las operaciones no bloqueantes como la lectura/escritura de archivos o las solicitudes de red se gestionan de manera eficiente sin detener la ejecución del programa.
+ ```
+    PRINCIPALES FUNCIONES:
 
-Módulos y NPM: Node.js utiliza el sistema de módulos CommonJS, lo que permite la organización del código en módulos reutilizables. Node Package Manager (NPM) es una herramienta que se utiliza para instalar, administrar y compartir paquetes de código JavaScript de terceros. NPM es fundamental en el ecosistema de Node.js.
+    -Gestion de E/S no bloqueantes:Proporciona una API unificada para realizar operaciones de E/S asincronica
 
-APIs del Sistema Operativo: Node.js proporciona APIs para interactuar con el sistema operativo, lo que permite realizar tareas como lectura/escritura de archivos, manipulación de rutas, gestión de procesos, etc.
+    -Programacion de eventos y bucle de eventos : Implementa bucle de eventos que permite manejar eventos y devoluciones de llamada de manera (EFICIENTE)
 
-Amplia Comunidad: Node.js tiene una comunidad activa y numerosos paquetes y bibliotecas disponibles en NPM que facilitan el desarrollo de una variedad de aplicaciones.
+    -Administracion de subprocesos(hilos): Gestiona internamente el uso de subprocesos de hilos la cual evita bloqueos y mantener la respuesta del sistema
 
-Aplicaciones en Tiempo Real: Node.js es muy adecuado para aplicaciones en tiempo real como chat en línea, juegos multijugador y aplicaciones de colaboración en tiempo real, debido a su capacidad para manejar muchas conexiones simultáneas en una sola máquina.
+    -Abstraccion de la plataforma: Esta diseñada para trabajar en varias plataformas y sistemas operativos 
+
+
+ ```
+
+-V8 Engine
+----------
+ Se basa en el motor de google V8, es un motor de javascript de alto rendimiento utilizado en los navegadores de google Chrome, V8 compila  y ejecuta el codigo de manera eficiente
+
+Event Loop
+----------
+ Node.js utiliza un modelo de programación asíncrona y basada en eventos. Esto significa que las operaciones no bloqueantes como la lectura/escritura de archivos o las solicitudes de red se gestionan de manera eficiente sin detener la ejecución del programa.
+
+Módulos y NPM 
+-------------
+ Node.js utiliza el sistema de módulos CommonJS, lo que permite la organización del código en módulos reutilizables. Node Package Manager (NPM) es una herramienta que se utiliza para instalar, administrar y compartir paquetes de código JavaScript de terceros. NPM es fundamental en el ecosistema de Node.js.
+
+APIs del Sistema Operativo
+--------------------------
+ Node.js proporciona APIs para interactuar con el sistema operativo, lo que permite realizar tareas como lectura/escritura de archivos, manipulación de rutas, gestión de procesos, etc.
+
+Amplia Comunidad
+----------------
+ Node.js tiene una comunidad activa y numerosos paquetes y bibliotecas disponibles en NPM que facilitan el desarrollo de una variedad de aplicaciones.
+
+Aplicaciones en Tiempo Real
+---------------------------
+ Node.js es muy adecuado para aplicaciones en tiempo real como chat en línea, juegos multijugador y aplicaciones de colaboración en tiempo real, debido a su capacidad para manejar muchas conexiones simultáneas en una sola máquina.
 
 
 # TIPOS DE MODULOS EN NODEJS
@@ -50,7 +81,7 @@ require('express')
 require('mongoose')
 ```
 
-
+# 1-NODE-FARM
 # AṔRENDIDO POR EL MOMENTO DEL CURSO DE NODE.JS
 
 Fs
@@ -148,6 +179,9 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8',)
 const dataObj = JSON.parse(data);
 
 ```
+
+# 2-NODE-WORKS
+
 
 
 
