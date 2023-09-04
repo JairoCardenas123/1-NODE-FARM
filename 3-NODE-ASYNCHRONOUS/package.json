@@ -1,5 +1,18 @@
 {
   "dependencies": {
+    "init": "^0.1.2",
     "superagent": "^8.1.2"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "name": "3-node-asynchronous",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

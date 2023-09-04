@@ -81,13 +81,17 @@ require('express')
 require('mongoose')
 ```
 
-# 1-NODE-FARM
 # AṔRENDIDO POR EL MOMENTO DEL CURSO DE NODE.JS
 
 Fs
 --
 
 Modulo de Node la cual nos permite manipular archivos del sistema operativo
+
+Superagent
+----------
+
+SuperAgent es una librería de Node.js utilizada para realizar solicitudes HTTP de manera sencilla y flexible. Facilita la creación y el envío de solicitudes HTTP GET, POST, PUT, DELETE y otras mediante una sintaxis simple y legible.
 
 ReadFileSync
 ------------
@@ -179,8 +183,6 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8',)
 const dataObj = JSON.parse(data);
 
 ```
-
-# 2-NODE-WORKS
 
 
 
