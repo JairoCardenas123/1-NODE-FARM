@@ -6,6 +6,20 @@ excelente para contruir aplicaciones web y servicios al lado del cliente.
 Caracteristicas de NodeJs
 -
 
+Que es NVM?
+-----------
+
+(Node Version Manager)
+
+es una herramienta que permite administrar
+múltiples versiones de Node.js en un sistema. Con NVM, puedes instalar, cambiar
+y administrar fácilmente las versiones de Node.js en tu entorno de desarrollo.
+
+```javascript 
+
+nvm --version
+
+```
 -Libuv:
 -------
 Es una biblioteca multiplataforma la cual utiliza node para gestionar entradas y salidas de manera asincronica,
