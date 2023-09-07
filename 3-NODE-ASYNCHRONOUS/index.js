@@ -44,10 +44,14 @@ const getDogPic = async()=>{
 
 
 }
-console.log('dassdasdsa');
-const x = getDogPic()
-console.log(x);
-console.log('dassdasdsa');
+console.log('1.will get dog pics');
+getDogPic().then(x => {
+    console.log(x);
+console.log('3.Done Getting dog pics');
+}).catch(err =>{
+    console.log(err);
+})
+
 
 /* readFilePro(`${__dirname}/dog.txt`)
     .then(data => {
