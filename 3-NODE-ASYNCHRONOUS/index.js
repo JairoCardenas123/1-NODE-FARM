@@ -30,10 +30,17 @@ const getDogPic = async()=>{
         const data = await readFilePro(`${__dirname}/dog.txt`)
         console.log(`Raza: ${data}`);
      
-        const res = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
-        console.log(res.body.message);
+        const res1Pro = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+
+        const res2Pro = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+
+        const res3Pro = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+
+        const all = await Promise.all([res1Pro,res2Pro,res3Pro])
+        const imgs = all.map(el => el.body.message)
+        console.log(all);
      
-        await writeFilePro('dog-img.txt', res.body.message)
+        await writeFilePro('dog-img.txt', imgs.join('\n'))
         console.log('Imagen de un perro aleatorio guardada en el archivo');
     } catch (error) {
         console.log(error);
@@ -44,14 +51,27 @@ const getDogPic = async()=>{
 
 
 }
-console.log('1.will get dog pics');
+
+(async()=>{
+    try {
+        console.log('1.will get dog pics');
+        const x = getDogPic();
+        console.log(x);
+        console.log('3.Done Getting dog pics');
+
+    } catch (error) {
+        console.log('ERROR');
+    }
+})();
+
+/* console.log('1.will get dog pics');
 getDogPic().then(x => {
     console.log(x);
 console.log('3.Done Getting dog pics');
 }).catch(err =>{
     console.log(err);
 })
-
+ */
 
 /* readFilePro(`${__dirname}/dog.txt`)
     .then(data => {
