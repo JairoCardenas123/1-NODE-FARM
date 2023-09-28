@@ -197,6 +197,62 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8',)
 const dataObj = JSON.parse(data);
 
 ```
+# Preguntas de entrevistas 
+
+
+- 2. *Explica el concepto de asincronía en Node.js y cómo se maneja utilizando callbacks.*
+   La asincronía en Node.js significa que las operaciones no bloquean la ejecución del código. Se maneja utilizando callbacks, que son funciones pasadas como argumentos a otras funciones y se llaman una vez que se completa una operación asincrónica, evitando la espera y permitiendo que el programa continúe ejecutándose.
+
+
+   
+- 3. *¿Qué es npm? ¿Cuál es su función en el ecosistema de Node.js?*
+   npm (Node Package Manager) es el gestor de paquetes predeterminado de Node.js. Su función es facilitar la instalación, gestión y compartición de paquetes de código reutilizable en proyectos de Node.js, simplificando la gestión de dependencias y acelerando el desarrollo.
+
+
+- 4. *Diferencia entre let, const y var en JavaScript y cuándo utilizarías cada uno.*
+   `var` se usaba para declarar variables antes de ES6, pero ahora se prefiere `let` y `const`. `let` se usa para variables cuyo valor cambiará, mientras que `const` se usa para valores constantes que no cambiarán durante la ejecución del programa. Usar `const` es preferible siempre que sea posible para garantizar la inmutabilidad.
+
+
+- 5. *Explica cómo gestionar las dependencias de un proyecto Node.js y menciona un archivo clave relacionado con esto.*
+   Las dependencias se gestionan mediante el archivo `package.json`. Puedes agregar dependencias usando `npm install nombre-del-paquete`. El archivo `package.json` también registra las dependencias y sus versiones, lo que facilita la replicación del entorno de desarrollo en otro lugar.
+
+
+- 6. *¿Qué es un módulo en Node.js? Proporciona un ejemplo de cómo importar y exportar módulos.*
+   Un módulo en Node.js es un archivo JavaScript independiente que encapsula código reutilizable. Para exportar datos desde un módulo, puedes usar `module.exports`. Ejemplo:
+
+   javascript
+   // En un archivo llamado miModulo.js
+   module.exports = {
+     miFuncion: function() {
+       // Código de la función
+     },
+     miVariable: 42
+   };
+   
+
+   Luego, para importar este módulo en otro archivo:
+
+   javascript
+   const miModulo = require('./miModulo');
+
+
+- 7. *¿Cuál es la diferencia entre el modelo de ejecución síncrona y asincrónica en Node.js?*
+   En el modelo síncrono, las operaciones bloquean la ejecución hasta que se completan. En el modelo asincrónico, las operaciones no bloquean y se ejecutan en segundo plano. Node.js utiliza el modelo asincrónico para evitar la espera y permitir una ejecución más eficiente en entornos de servidor.
+
+
+
+- 8. *Habla sobre la diferencia entre setTimeout y setInterval en JavaScript y proporciona ejemplos de uso.*
+   `setTimeout` se usa para ejecutar una función después de un retraso especificado, mientras que `setInterval` se usa para ejecutar una función repetidamente en intervalos fijos. Ejemplos:
+
+   javascript
+   setTimeout(() => {
+     console.log('Se ejecutará después de 2 segundos');
+   }, 2000);
+
+   setInterval(() => {
+     console.log('Se ejecutará cada 3 segundos');
+   }, 3000);
+
 
 
 
